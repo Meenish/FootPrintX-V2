@@ -1,0 +1,23 @@
+[Unit]
+Description=FootprintX web API and background worker
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=footprintx
+Group=footprintx
+WorkingDirectory=/opt/footprintx/current
+EnvironmentFile=/etc/footprintx/production.env
+ExecStart=/usr/bin/node backend/src/server.js
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=20
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

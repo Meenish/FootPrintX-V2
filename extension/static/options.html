@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FootprintX extension settings</title>
+  <link rel="stylesheet" href="ext.css" />
+  <style>main { max-width: 680px; margin: 0 auto; padding: 28px 18px; }</style>
+</head>
+<body>
+  <main>
+    <div class="brand" style="font-size: 20px; margin-bottom: 4px"><span aria-hidden="true">◈</span> Footprint<b>X</b></div>
+    <p>Browser extension settings</p>
+
+    <section class="card" id="perm-card" hidden aria-labelledby="perm-h">
+      <h2 id="perm-h">Allow access to the FootprintX server</h2>
+      <p>Your browser needs your permission for the extension to contact the FootprintX server. This grants access to the FootprintX server only — not to the websites you visit.</p>
+      <button class="primary" id="grant">Allow access</button>
+    </section>
+
+    <section class="card" aria-labelledby="acct-h">
+      <h2 id="acct-h">Account</h2>
+      <div id="account"></div>
+      <form id="link-form" class="row" hidden>
+        <label for="code" class="sr-only">Link code</label>
+        <input id="code" type="text" inputmode="text" autocomplete="off" maxlength="12" placeholder="ABCD-EFGH" aria-describedby="code-help" />
+        <button class="primary" type="submit">Link</button>
+      </form>
+      <p id="code-help" class="muted" hidden>In FootprintX, open Settings → Browser extension → “Create link code”, then type the code here. Your password is never entered into the extension.</p>
+      <p id="link-msg" role="status"></p>
+    </section>
+
+    <section class="card" aria-labelledby="prot-h">
+      <h2 id="prot-h">Protection</h2>
+      <div id="protection"></div>
+      <label class="toggle"><input type="checkbox" id="interstitial" /> <span><b>Replace known-threat pages with a warning</b><br /><span class="muted">Optional: navigate to a warning after a confirmed threat. Continue returns to the website root; paths and queries are not retained.</span></span></label>
+      <label class="toggle"><input type="checkbox" id="paused" /> <span><b>Pause protection</b><br /><span class="muted">No sites are checked while paused. The toolbar shows grey.</span></span></label>
+      <label class="toggle"><input type="checkbox" id="notify" /> <span><b>Notify me about suspicious sites</b><br /><span class="muted">Known-threat warnings are always shown; this controls the extra notification for weaker signals.</span></span></label>
+    </section>
+
+    <section class="card" aria-labelledby="sync-h">
+      <h2 id="sync-h">Share security events with your dashboard (optional)</h2>
+      <p>When on, these events are sent to your FootprintX account so they appear in your dashboard: a known-threat warning shown, a suspicious-site warning shown, or a site you visited later being listed as a threat. Each event contains the site’s domain name, the warning type and the time. Routine visits, full addresses (paths and queries), page content and your browsing history are never sent.</p>
+      <label class="toggle"><input type="checkbox" id="sync" /> <span><b>Share security events</b> <span class="pill premium">Premium</span></span></label>
+      <p id="sync-msg" role="status"></p>
+    </section>
+
+    <section class="card" aria-labelledby="data-h">
+      <h2 id="data-h">Data stored on this device</h2>
+      <p id="local-data"></p>
+      <button id="clear" class="danger">Clear local history and saved results</button>
+      <p class="muted" style="margin-top: 10px">How checks work: for each site, the extension computes a SHA-256 hash of the domain name (and its parent domains) and sends only the first 8 hex characters to FootprintX. The server replies with the full hashes of any listed sites that share that prefix, and the extension compares them on your device. Account awareness separately sends the normalized domain to your authenticated FootprintX backend to match your inventory. These lookups are not stored as visit history. Paths, queries, and page contents are never sent.</p>
+    </section>
+    <p class="muted" id="server"></p>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>

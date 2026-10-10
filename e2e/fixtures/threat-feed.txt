@@ -1,0 +1,3 @@
+# TEST-ONLY threat feed fixture. Reserved .example names; not real threats.
+malicious.fx-test.example
+phish-login.fx-test.example

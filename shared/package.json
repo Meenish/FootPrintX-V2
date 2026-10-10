@@ -1,0 +1,20 @@
+{
+  "name": "@footprintx/shared",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Domain normalization, matching and lookalike heuristics shared by the FootprintX backend and browser extension.",
+  "exports": {
+    "./domain": "./src/domain.js",
+    "./lookalike": "./src/lookalike.js",
+    "./threat": "./src/threat.js"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "eval:detection": "node scripts/evaluate-detection.mjs"
+  },
+  "dependencies": {
+    "punycode": "^2.3.1",
+    "tldts": "^6.1.70"
+  }
+}

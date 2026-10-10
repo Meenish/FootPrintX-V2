@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>FootprintX</title>
+  <link rel="stylesheet" href="ext.css" />
+  <style>body { width: 360px; padding: 14px; }</style>
+</head>
+<body>
+  <header class="row" style="justify-content: space-between; margin-bottom: 12px">
+    <div class="brand"><span aria-hidden="true">◈</span> Footprint<b>X</b></div>
+    <span id="plan" class="pill"></span>
+  </header>
+  <main>
+    <section class="card" aria-live="polite">
+      <div id="status" class="status grey">
+        <div class="glyph" id="glyph" aria-hidden="true">…</div>
+        <div>
+          <h2 id="label">Loading…</h2>
+          <div class="domain" id="domain"></div>
+        </div>
+      </div>
+      <p id="explanation" style="margin-top: 10px"></p>
+      <ul class="reasons" id="reasons"></ul>
+      <p class="muted" id="meta"></p>
+    </section>
+    <section class="card" aria-live="polite">
+      <h3>Your account on this website</h3>
+      <p id="association">Account lookup unavailable.</p>
+      <p id="login-state" class="muted">Login status unavailable.</p>
+      <ul id="account-matches" class="reasons"></ul>
+    </section>
+    <div id="actions" class="row" style="margin-bottom: 12px"></div>
+    <section class="card" id="recent-card" hidden>
+      <h3 style="font-size: 13px">Recent warnings (stored on this device)</h3>
+      <ul class="reasons" id="recent"></ul>
+    </section>
+    <p class="muted">A green result means no known threat was found by the available checks. It is not a guarantee that a site is safe.</p>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

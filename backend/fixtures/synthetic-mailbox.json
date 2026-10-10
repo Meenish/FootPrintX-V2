@@ -1,0 +1,33 @@
+{
+  "_comment": "SYNTHETIC DEVELOPMENT DATA. Not real mail. Every record created from this fixture is flagged is_synthetic=true and labelled in the UI. daysAgo is relative to scan time so results are deterministic relative to 'now'.",
+  "mailbox": "synthetic.user@footprintx.invalid",
+  "messages": [
+    { "id": "syn-01", "from": "GitHub <noreply@github.com>", "subject": "Welcome to GitHub", "daysAgo": 900, "auth": "dmarc=pass header.from=github.com" },
+    { "id": "syn-02", "from": "GitHub <noreply@github.com>", "subject": "[GitHub] Unusual sign-in activity detected on your account", "daysAgo": 10, "auth": "dmarc=pass header.from=github.com" },
+    { "id": "syn-03", "from": "Adobe <message@adobe.com>", "subject": "Welcome to Adobe — verify your email", "daysAgo": 3000, "auth": "dmarc=pass header.from=adobe.com" },
+    { "id": "syn-04", "from": "Spotify <no-reply@spotify.com>", "subject": "Confirm your email address", "daysAgo": 400, "auth": "dmarc=pass header.from=spotify.com" },
+    { "id": "syn-05", "from": "Spotify <no-reply@spotify.com>", "subject": "Your Spotify receipt", "daysAgo": 20, "auth": "dmarc=pass header.from=spotify.com" },
+    { "id": "syn-06", "from": "Canva <noreply@canva.com>", "subject": "Welcome to Canva!", "daysAgo": 200, "auth": "dmarc=pass header.from=canva.com" },
+    { "id": "syn-07", "from": "Canva <noreply@canva.com>", "subject": "Two-step verification is now turned on", "daysAgo": 150, "auth": "dmarc=pass header.from=canva.com" },
+    { "id": "syn-08", "from": "Dropbox <no-reply@dropbox.com>", "subject": "Verify your email for Dropbox", "daysAgo": 1500, "auth": "dmarc=pass header.from=dropbox.com" },
+    { "id": "syn-09", "from": "Dropbox <no-reply@dropbox.com>", "subject": "Two-step verification was turned off", "daysAgo": 1400, "auth": "dmarc=pass header.from=dropbox.com" },
+    { "id": "syn-10", "from": "LinkedIn <security-noreply@linkedin.com>", "subject": "Password reset request", "daysAgo": 60, "auth": "dmarc=pass header.from=linkedin.com" },
+    { "id": "syn-11", "from": "LinkedIn <security-noreply@linkedin.com>", "subject": "Your password was changed", "daysAgo": 59, "auth": "dmarc=pass header.from=linkedin.com" },
+    { "id": "syn-12", "from": "TechCrunch <newsletter@techcrunch.com>", "subject": "TechCrunch Daily Digest", "daysAgo": 3, "auth": "dmarc=pass header.from=techcrunch.com" },
+    { "id": "syn-13", "from": "TechCrunch <newsletter@techcrunch.com>", "subject": "TechCrunch Daily Digest", "daysAgo": 4, "auth": "dmarc=pass header.from=techcrunch.com" },
+    { "id": "syn-14", "from": "Zomato <noreply@zomato.com>", "subject": "Your order receipt", "daysAgo": 30, "auth": "dmarc=pass header.from=zomato.com" },
+    { "id": "syn-15", "from": "Zomato <noreply@zomato.com>", "subject": "Your order receipt", "daysAgo": 45, "auth": "dmarc=pass header.from=zomato.com" },
+    { "id": "syn-16", "from": "PayPal <service@paypal.com>", "subject": "Security alert: unusual sign-in to your account", "daysAgo": 2, "auth": "spf=fail; dkim=none; dmarc=fail header.from=paypal.com" },
+    { "id": "syn-17", "from": "Swiggy <noreply@sendgrid.net>", "subject": "Welcome to Swiggy", "daysAgo": 320, "auth": "dkim=pass header.i=@sendgrid.net" },
+    { "id": "syn-18", "from": "Google <no-reply@accounts.google.com>", "subject": "New sign-in on Linux", "daysAgo": 40, "auth": "dmarc=pass header.from=accounts.google.com" },
+    { "id": "syn-19", "from": "Asha Friend <asha.friend@gmail.com>", "subject": "Welcome to the team!", "daysAgo": 15, "auth": "dmarc=pass header.from=gmail.com" },
+    { "id": "syn-20", "from": "Netflix <info@account.netflix.com>", "subject": "Welcome to Netflix", "daysAgo": 700, "auth": "dmarc=pass header.from=account.netflix.com" },
+    { "id": "syn-21", "from": "Netflix <info@account.netflix.com>", "subject": "Your account has been closed", "daysAgo": 100, "auth": "dmarc=pass header.from=account.netflix.com" }
+  ],
+  "breaches": [
+    { "breach": "Adobe", "domain": "adobe.com", "xposedDate": "2013", "xposed_data": "Email addresses;Password hints;Passwords;Usernames", "verified": "Yes" },
+    { "breach": "Canva", "domain": "canva.com", "xposedDate": "2019", "xposed_data": "Email addresses;Names;Passwords;Usernames", "verified": "Yes" },
+    { "breach": "Dailymotion", "domain": "dailymotion.com", "xposedDate": "2016", "xposed_data": "Email addresses;Passwords;Usernames", "verified": "Yes" },
+    { "breach": "ExampleComboList", "domain": "", "xposedDate": "2019", "xposed_data": "Email addresses;Passwords", "verified": "No" }
+  ]
+}

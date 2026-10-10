@@ -1,0 +1,38 @@
+name: Verify release
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: footprintx_test
+          POSTGRES_PASSWORD: isolated-ci-only
+          POSTGRES_DB: footprintx_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U footprintx_test"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run test:pg
+        env:
+          TEST_DATABASE_URL: postgres://footprintx_test:isolated-ci-only@localhost:5432/footprintx_test
+      - run: npm run build
+      - run: npx playwright-core install --with-deps chromium
+      - run: npm run test:e2e
+      - run: npm audit --omit=dev --audit-level=moderate
+      - uses: actions/upload-artifact@v4
+        with:
+          name: local-browser-packages
+          path: extension/dist/*.zip

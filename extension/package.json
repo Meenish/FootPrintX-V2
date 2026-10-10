@@ -1,0 +1,19 @@
+{
+  "name": "@footprintx/extension",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "build:chromium": "node build.mjs --target=chromium",
+    "build:firefox": "node build.mjs --target=firefox",
+    "package": "node build.mjs --zip",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@footprintx/shared": "2.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
